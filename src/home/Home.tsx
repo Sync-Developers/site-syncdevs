@@ -1,4 +1,3 @@
-import { Contact } from "lucide-react";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
@@ -8,13 +7,13 @@ export default function Home() {
   return (
     <main
       id="home"
-      className="relative isolate min-h-[calc(100vh-80px)] overflow-hidden bg-[#061225] text-white"
+      className="relative isolate min-h-screen overflow-x-hidden bg-[#061225] text-white"
     >
-      {/* Background glow */}
+      {/* Background glow global */}
       <div className="pointer-events-none absolute -left-40 top-20 -z-10 h-96 w-96 rounded-full bg-blue-600/20 blur-[140px]" />
       <div className="pointer-events-none absolute right-0 top-10 -z-10 h-96 w-96 rounded-full bg-violet-600/20 blur-[140px]" />
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:min-h-[calc(100vh-80px)] lg:grid-cols-2 lg:px-10 lg:py-12">
         {/* Left side */}
         <div className="relative z-10">
@@ -50,7 +49,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/projetos"
+              href="#projetos"
               className="inline-flex items-center justify-center rounded-full border border-slate-500/50 px-7 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               Conheça nossos projetos
@@ -163,7 +162,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating card */}
+          {/* Floating cards */}
           <div className="absolute -right-2 top-0 rounded-xl border border-blue-400/25 bg-[#0D1B32]/95 p-4 shadow-xl shadow-blue-950/40 sm:-right-5">
             <p className="text-xs text-slate-400">Nossa essência</p>
             <p className="mt-1 text-sm font-bold text-cyan-300">
@@ -179,10 +178,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Seções independentes (Fora da Grid do Hero) */}
       <Services />
       <About />
       <Portfolio />
-      <ContactFooter/>
+      <ContactFooter />
     </main>
   );
 }
