@@ -22,7 +22,7 @@ function Navbar() {
                 <img src="https://ik.imagekit.io/dy033dhiwy/Logo/logo-fundo-transparente.png" alt="Sync Developers" className="w-45 h-20" />
             </div>
              <div className="fixed top-6 right-0 flex justify-center px-6 hover:scale-105 transition-transform duration-200">
-                <Link to="/contato" className="px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 bg-indigo-600 text-white shadow-md hover:bg-indigo-700">
+                <Link to="/orcamento" className="px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 bg-indigo-600 text-white shadow-md hover:bg-indigo-700">
                     Solicitar Orçamento 
                 </Link>
             </div>
