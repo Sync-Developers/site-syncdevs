@@ -1,3 +1,9 @@
+import { Contact } from "lucide-react";
+import About from "../components/About";
+import Portfolio from "../components/Portfolio";
+import Services from "../components/Services";
+import ContactFooter from "../components/ContactFooter";
+
 export default function Home() {
   return (
     <main
@@ -173,6 +179,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Services />
+      <About />
+      <Portfolio />
+      <ContactFooter/>
     </main>
   );
 }
