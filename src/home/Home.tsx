@@ -26,7 +26,7 @@ export default function Home() {
 
           <h1 className="max-w-2xl text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl xl:text-7xl">
             Transformamos ideias em{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-violet-500 bg-clip-text text-transparent">
               soluções digitais reais.
             </span>
           </h1>
@@ -40,7 +40,7 @@ export default function Home() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="/contato"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-3.5 text-sm font-bold shadow-lg shadow-blue-600/20 transition duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 px-7 py-3.5 text-sm font-bold shadow-lg shadow-blue-600/20 transition duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20"
             >
               Vamos conversar
               <span className="transition-transform group-hover:translate-x-1">

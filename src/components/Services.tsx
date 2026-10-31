@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Code2, Cloud, Cpu, ArrowUpRight } from 'lucide-react';
 
 const services = [
@@ -71,11 +71,11 @@ export default function Services() {
                     <IconComponent className="h-6 w-6" />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold text-slate-900 break-words">
+                  <h3 className="mt-6 text-xl font-bold text-slate-900 wrap-break-word">
                     {service.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600 break-words">
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 wrap-break-word">
                     {service.description}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Services() {
 
           <a
             href="/contato"
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/25 active:scale-95"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-linear-to-r from-blue-600 to-purple-600 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/25 active:scale-95"
           >
             Solicitar orçamento
             <ArrowUpRight className="h-4 w-4" />
