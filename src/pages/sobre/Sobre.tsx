@@ -75,7 +75,7 @@ function Sobre() {
                         <div className="relative mb-6">
                             <div className="absolute inset-0 bg-[#0BD1F9] blur-xl opacity-20 rounded-full group-hover:opacity-40 transition-opacity"></div>
                             <img
-                                src="https://via.placeholder.com/150"
+                                src="https://ik.imagekit.io/dy033dhiwy/integrantes/Joao%20Vitor%20(6)%20(4).jpg"
                                 alt="Foto de João Vitor Diniz Alves"
                                 className="relative w-36 h-36 rounded-full object-cover border-4 border-[#0B1221] shadow-[0_0_0_2px_#0BD1F9]"
                             />
@@ -87,18 +87,15 @@ function Sobre() {
                         </span>
 
                         <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-sm">
-                            Especialista em construir a lógica de backend e arquiteturar interfaces fluidas. Focado em transformar problemas complexos de software em soluções escaláveis e de alta performance.
+                            Desenvolvedor Full Stack com foco em soluções web, APIs e sistemas personalizados. Trabalho para transformar necessidades de negócio em aplicações funcionais, eficientes e escaláveis, sempre priorizando qualidade, organização e uma boa experiência para o cliente.
                         </p>
 
                         <div className="flex gap-4 text-[#64748B] mt-auto">
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#0BD1F9]/20 hover:text-[#0BD1F9] transition-all duration-300">
+                            <a href="https://github.com/JohnnieDiniz" className="p-2.5 rounded-full bg-white/5 hover:bg-[#0BD1F9]/20 hover:text-[#0BD1F9] transition-all duration-300">
                                 <GithubLogoIcon size={22} weight="fill" />
                             </a>
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#0BD1F9]/20 hover:text-[#0BD1F9] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/joaovitordinizalves/" className="p-2.5 rounded-full bg-white/5 hover:bg-[#0BD1F9]/20 hover:text-[#0BD1F9] transition-all duration-300">
                                 <LinkedinLogoIcon size={22} weight="fill" />
-                            </a>
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#0BD1F9]/20 hover:text-[#0BD1F9] transition-all duration-300">
-                                <InstagramLogoIcon size={22} weight="fill" />
                             </a>
                         </div>
                     </div>
@@ -109,30 +106,27 @@ function Sobre() {
                         <div className="relative mb-6">
                             <div className="absolute inset-0 bg-[#8B5CFF] blur-xl opacity-20 rounded-full group-hover:opacity-40 transition-opacity"></div>
                             <img
-                                src="https://via.placeholder.com/150"
-                                alt="Foto da Sócia"
+                                src="https://ik.imagekit.io/dy033dhiwy/integrantes/Maryanne.webp"
+                                alt="Foto da Maryane Praxedes"
                                 className="relative w-36 h-36 rounded-full object-cover border-4 border-[#0B1221] shadow-[0_0_0_2px_#8B5CFF]"
                             />
                         </div>
 
                         <h3 className="text-2xl font-bold text-white mb-2">Maryane Praxedes</h3>
                         <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#8B5CFF]/10 text-[#8B5CFF] text-xs font-semibold mb-6">
-                            Desenvolvedora Full Stack Sênior
+                            Desenvolvedora Full Stack Junior
                         </span>
 
                         <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-sm">
-                            Coloque aqui um breve resumo sobre a trajetória dela, destacando como as habilidades dela complementam o desenvolvimento técnico da empresa.
+                            Especialista em desenvolvimento Backend e DevSecOps, com foco na criação de sistemas, APIs e soluções digitais seguras. Atuo integrando desenvolvimento e práticas de segurança ao ciclo de vida do software, priorizando qualidade, eficiência e confiabilidade em cada projeto.
                         </p>
 
                         <div className="flex gap-4 text-[#64748B] mt-auto">
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#8B5CFF]/20 hover:text-[#8B5CFF] transition-all duration-300">
+                            <a href="https://github.com/marypraxedes" className="p-2.5 rounded-full bg-white/5 hover:bg-[#8B5CFF]/20 hover:text-[#8B5CFF] transition-all duration-300">
                                 <GithubLogoIcon size={22} weight="fill" />
                             </a>
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#8B5CFF]/20 hover:text-[#8B5CFF] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/marypraxedes/" className="p-2.5 rounded-full bg-white/5 hover:bg-[#8B5CFF]/20 hover:text-[#8B5CFF] transition-all duration-300">
                                 <LinkedinLogoIcon size={22} weight="fill" />
-                            </a>
-                            <a href="#" className="p-2.5 rounded-full bg-white/5 hover:bg-[#8B5CFF]/20 hover:text-[#8B5CFF] transition-all duration-300">
-                                <InstagramLogoIcon size={22} weight="fill" />
                             </a>
                         </div>
                     </div>
