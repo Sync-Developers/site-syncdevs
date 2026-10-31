@@ -1,6 +1,7 @@
 import Navbar from './components/navbar/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Sobre from './pages/sobre/Sobre'
+import Projetos from './pages/projetos/Projetos'
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
                 <main className="pt-25">
                     <Routes>
                         <Route path="/sobre" element={<Sobre />} />
+                        <Route path="/projetos" element={<Projetos />} />
                     </Routes>
                 </main>
 
