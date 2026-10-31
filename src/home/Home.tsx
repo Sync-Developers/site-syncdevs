@@ -20,7 +20,6 @@ export default function Home() {
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-8 bg-cyan-400" />
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-              Soluções em tecnologia
             </span>
           </div>
 
