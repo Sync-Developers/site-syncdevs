@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
 import { Mail, MapPin, Send } from 'lucide-react';
@@ -9,7 +9,7 @@ export default function ContactFooter() {
     const [status, setStatus] = useState('');
     const [enviando, setEnviando] = useState(false);
 
-    const enviarMensagem = async (e: { preventDefault: () => void; }) => {
+    const enviarMensagem = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const form = formRef.current;
@@ -44,15 +44,15 @@ export default function ContactFooter() {
     return (
         <footer
             id="contato"
-            className="relative overflow-hidden bg-[#061225] pt-20 pb-10 text-white"
+            className="relative overflow-hidden bg-[#061225] pt-16 sm:pt-20 pb-10 text-white"
         >
             {/* Luzes de fundo */}
-            <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-600/15 blur-[140px]" />
+            <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-72 w-72 sm:h-96 sm:w-96 -translate-x-1/2 rounded-full bg-blue-600/15 blur-[120px] sm:blur-[140px]" />
 
-            <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
 
                 {/* Bloco Superior */}
-                <div className="grid gap-12 border-b border-white/10 pb-16 lg:grid-cols-2 lg:gap-16">
+                <div className="grid gap-10 sm:gap-12 border-b border-white/10 pb-12 sm:pb-16 lg:grid-cols-2 lg:gap-16">
 
                     {/* Informações de contato */}
                     <div>
@@ -60,40 +60,40 @@ export default function ContactFooter() {
                             Contato
                         </span>
 
-                        <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                        <h2 className="mt-3 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                             Vamos conversar <br />
                             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                                 sobre o seu projeto?
                             </span>
                         </h2>
 
-                        <p className="mt-4 text-base leading-relaxed text-slate-300">
+                        <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
                             Estamos prontos para transformar as suas ideias em
                             soluções digitais de alto impacto. Envie-nos uma
                             mensagem e retornaremos em breve.
                         </p>
 
-                        <div className="mt-8 space-y-5">
+                        <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-5">
 
                             {/* E-mail */}
-                            <div className="flex items-center gap-4">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
+                            <div className="flex items-center gap-3 sm:gap-4">
+                                <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
                                     <Mail className="h-5 w-5" />
                                 </div>
 
-                                <div>
+                                <div className="min-w-0">
                                     <p className="text-xs text-slate-400">
                                         E-mail
                                     </p>
-                                    <p className="text-sm font-semibold text-white">
+                                    <p className="text-sm font-semibold text-white truncate">
                                         developerssync@gmail.com
                                     </p>
                                 </div>
                             </div>
 
                             {/* Localização */}
-                            <div className="flex items-center gap-4">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
+                            <div className="flex items-center gap-3 sm:gap-4">
+                                <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
                                     <MapPin className="h-5 w-5" />
                                 </div>
 
@@ -109,13 +109,13 @@ export default function ContactFooter() {
                         </div>
 
                         {/* GitHub e LinkedIn */}
-                        <div className="mt-10 flex flex-wrap items-center gap-3">
+                        <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-2.5 sm:gap-3">
 
                             <a
                                 href="https://github.com/Sync-Developers"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                                 title="GitHub da Sync Developers"
                             >
                                 <FaGithub className="h-4 w-4 text-cyan-400" />
@@ -126,7 +126,7 @@ export default function ContactFooter() {
                                 href="https://www.linkedin.com/in/marypraxedes/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                             >
                                 <FaLinkedin className="h-4 w-4 text-cyan-400" />
                                 Maryane Praxedes
@@ -136,7 +136,7 @@ export default function ContactFooter() {
                                 href="https://www.linkedin.com/in/joaovitordinizalves/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                             >
                                 <FaLinkedin className="h-4 w-4 text-cyan-400" />
                                 João Vitor Diniz
@@ -145,7 +145,7 @@ export default function ContactFooter() {
                     </div>
 
                     {/* Formulário */}
-                    <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-6 shadow-2xl sm:p-8">
+                    <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-5 sm:p-8 shadow-2xl">
 
                         <form
                             ref={formRef}
@@ -168,7 +168,7 @@ export default function ContactFooter() {
                                     name="user_name"
                                     placeholder="Seu nome completo"
                                     required
-                                    className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                    className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                 />
                             </div>
 
@@ -187,7 +187,7 @@ export default function ContactFooter() {
                                     name="user_email"
                                     placeholder="seu.email@empresa.com"
                                     required
-                                    className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                    className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                 />
                             </div>
 
@@ -206,7 +206,7 @@ export default function ContactFooter() {
                                     rows={4}
                                     placeholder="Conte-nos um pouco sobre a sua ideia ou projeto..."
                                     required
-                                    className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                    className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                 />
                             </div>
 
@@ -228,7 +228,7 @@ export default function ContactFooter() {
                                 <p
                                     role="status"
                                     aria-live="polite"
-                                    className="text-center text-sm text-cyan-400"
+                                    className="text-center text-sm text-cyan-400 font-medium"
                                 >
                                     {status}
                                 </p>
@@ -238,9 +238,9 @@ export default function ContactFooter() {
                 </div>
 
                 {/* Rodapé inferior */}
-                <div className="flex flex-col items-center justify-between gap-4 pt-8 text-xs text-slate-400 sm:flex-row">
+                <div className="flex flex-col items-center justify-between gap-4 pt-8 text-xs text-slate-400 sm:flex-row text-center sm:text-left">
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
                         <img
                             src="/logo.svg"
                             alt="Sync Developers Logo"
@@ -257,8 +257,7 @@ export default function ContactFooter() {
                     </div>
 
                     <p>
-                        © {new Date().getFullYear()} Sync Developers.
-                        Todos os direitos reservados.
+                        © {new Date().getFullYear()} Sync Developers. Todos os direitos reservados.
                     </p>
                 </div>
             </div>

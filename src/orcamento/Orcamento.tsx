@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
 import {
@@ -53,13 +52,9 @@ const faixasOrcamento = [
 
 export default function SolicitarOrcamento() {
   const [projetoSelecionado, setProjetoSelecionado] = useState('web');
-
   const [orcamentoEstimado, setOrcamentoEstimado] = useState('Ainda não sei');
-
   const [carregando, setCarregando] = useState(false);
-
   const [enviado, setEnviado] = useState(false);
-
   const [erro, setErro] = useState('');
 
   const [formData, setFormData] = useState({
@@ -70,7 +65,7 @@ export default function SolicitarOrcamento() {
     descricao: '',
   });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setCarregando(true);
@@ -126,12 +121,12 @@ export default function SolicitarOrcamento() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#061225] text-white">
-      <main className="relative isolate flex-1 px-6 pt-32 pb-16 lg:px-10">
+      <main className="relative isolate flex-1 px-4 sm:px-6 lg:px-10 pt-28 sm:pt-36 lg:pt-40 pb-16">
 
         {/* Glow Effects de fundo */}
-        <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-600/15 blur-[160px]" />
+        <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-72 w-72 sm:h-[500px] sm:w-[500px] -translate-x-1/2 rounded-full bg-blue-600/15 blur-[120px] sm:blur-[160px]" />
 
-        <div className="pointer-events-none absolute right-10 top-1/3 -z-10 h-80 w-80 rounded-full bg-purple-600/15 blur-[140px]" />
+        <div className="pointer-events-none absolute right-10 top-1/3 -z-10 h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-purple-600/15 blur-[100px] sm:blur-[140px]" />
 
         <div className="mx-auto max-w-7xl">
 
@@ -142,50 +137,51 @@ export default function SolicitarOrcamento() {
               Orçamento Gratuito
             </span>
 
-            <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
               Vamos construir o seu <br />
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 projeto juntos?
               </span>
             </h1>
 
-            <p className="mt-4 text-base text-slate-300 sm:text-lg">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-slate-300">
               Preencha os detalhes abaixo para entendermos a sua necessidade.
               Responderemos com uma proposta personalizada em até 24h.
             </p>
           </div>
 
           {/* Conteúdo do formulário */}
-          <div className="mt-12 mb-16 grid gap-10 lg:grid-cols-12 lg:gap-12 items-start">
+          <div className="mt-10 sm:mt-12 mb-16 grid gap-8 lg:grid-cols-12 lg:gap-12 items-start">
 
             {/* Lado Esquerdo: Formulário */}
-            <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-6 shadow-2xl sm:p-8 lg:col-span-8">
+            <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-5 sm:p-8 shadow-2xl lg:col-span-8">
 
               {enviado ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
+                <div className="flex flex-col items-center justify-center py-10 sm:py-12 text-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
 
-                  <h3 className="font-heading text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
                     Solicitação Recebida!
                   </h3>
 
-                  <p className="mt-2 text-sm text-slate-300 max-w-md">
+                  <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-md">
                     Obrigado pelas informações! A equipe da{' '}
                     <strong>Sync Developers</strong> já está analisando o seu
                     projeto e entrará em contato em breve.
                   </p>
 
                   <button
+                    type="button"
                     onClick={() => setEnviado(false)}
-                    className="mt-6 rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition hover:border-cyan-400 hover:bg-cyan-400/10"
+                    className="mt-6 rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition hover:border-cyan-400 hover:bg-cyan-400/10 active:scale-95"
                   >
                     Solicitar outro orçamento
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
 
                   {/* PASSO 1: Tipo de Projeto */}
                   <div>
@@ -205,7 +201,7 @@ export default function SolicitarOrcamento() {
                             onClick={() =>
                               setProjetoSelecionado(item.id)
                             }
-                            className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 ${
+                            className={`cursor-pointer rounded-xl border p-4 transition-all duration-200 select-none ${
                               selecionado
                                 ? 'border-cyan-400 bg-cyan-400/10 text-white shadow-lg shadow-cyan-500/10'
                                 : 'border-white/10 bg-[#061225] text-slate-400 hover:border-white/20 hover:text-slate-200'
@@ -213,7 +209,7 @@ export default function SolicitarOrcamento() {
                           >
                             <div className="flex items-center gap-3">
                               <div
-                                className={`p-2 rounded-lg ${
+                                className={`p-2.5 rounded-lg shrink-0 ${
                                   selecionado
                                     ? 'bg-cyan-400 text-slate-950'
                                     : 'bg-white/5 text-cyan-400'
@@ -256,7 +252,7 @@ export default function SolicitarOrcamento() {
                             onClick={() =>
                               setOrcamentoEstimado(faixa)
                             }
-                            className={`rounded-xl px-4 py-2 text-xs font-semibold transition-all ${
+                            className={`rounded-xl px-3.5 sm:px-4 py-2 text-xs font-semibold transition-all active:scale-95 ${
                               selecionado
                                 ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
                                 : 'border border-white/10 bg-[#061225] text-slate-300 hover:border-white/20'
@@ -270,14 +266,14 @@ export default function SolicitarOrcamento() {
                   </div>
 
                   {/* PASSO 3: Dados de Contato e Descrição */}
-                  <div className="space-y-4 pt-2 border-t border-white/10">
+                  <div className="space-y-4 pt-4 border-t border-white/10">
                     <label className="block text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">
                       3. Seus dados e detalhes do projeto
                     </label>
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="mb-1 block text-xs font-medium text-slate-300">
+                        <label className="mb-1.5 block text-xs font-medium text-slate-300">
                           Seu Nome *
                         </label>
 
@@ -292,12 +288,12 @@ export default function SolicitarOrcamento() {
                             })
                           }
                           placeholder="Ex: Peter Parker"
-                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                         />
                       </div>
 
                       <div>
-                        <label className="mb-1 block text-xs font-medium text-slate-300">
+                        <label className="mb-1.5 block text-xs font-medium text-slate-300">
                           Seu E-mail *
                         </label>
 
@@ -312,14 +308,14 @@ export default function SolicitarOrcamento() {
                             })
                           }
                           placeholder="peter@parker.com"
-                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="mb-1 block text-xs font-medium text-slate-300">
+                        <label className="mb-1.5 block text-xs font-medium text-slate-300">
                           WhatsApp / Telefone
                         </label>
 
@@ -333,12 +329,12 @@ export default function SolicitarOrcamento() {
                             })
                           }
                           placeholder="(11) 99999-9999"
-                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                         />
                       </div>
 
                       <div>
-                        <label className="mb-1 block text-xs font-medium text-slate-300">
+                        <label className="mb-1.5 block text-xs font-medium text-slate-300">
                           Empresa / Marca (Opcional)
                         </label>
 
@@ -352,13 +348,13 @@ export default function SolicitarOrcamento() {
                             })
                           }
                           placeholder="Nome da sua empresa"
-                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                          className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="mb-1 block text-xs font-medium text-slate-300">
+                      <label className="mb-1.5 block text-xs font-medium text-slate-300">
                         Conte um pouco sobre a sua ideia *
                       </label>
 
@@ -373,7 +369,7 @@ export default function SolicitarOrcamento() {
                           })
                         }
                         placeholder="Quais as principais funcionalidades? Já possui design? Qual o prazo desejado?"
-                        className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                        className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                       />
                     </div>
                   </div>
@@ -382,7 +378,7 @@ export default function SolicitarOrcamento() {
                   {erro && (
                     <p
                       role="alert"
-                      className="text-sm text-center text-red-400"
+                      className="text-sm text-center text-red-400 font-medium"
                     >
                       {erro}
                     </p>
@@ -392,7 +388,7 @@ export default function SolicitarOrcamento() {
                   <button
                     type="submit"
                     disabled={carregando}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 py-4 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition duration-300 hover:scale-[1.01] hover:shadow-purple-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 py-3.5 sm:py-4 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition duration-300 hover:scale-[1.01] hover:shadow-purple-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {carregando ? (
                       <span>Enviando solicitação...</span>
@@ -409,8 +405,8 @@ export default function SolicitarOrcamento() {
 
             {/* Lado Direito: Garantias e Card de Confiança */}
             <div className="space-y-6 lg:col-span-4">
-              <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-6 shadow-xl">
-                <h3 className="font-heading text-lg font-bold text-white mb-4">
+              <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-5 sm:p-6 shadow-xl">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-4">
                   Por que escolher a Sync?
                 </h3>
 
@@ -457,12 +453,12 @@ export default function SolicitarOrcamento() {
               </div>
 
               {/* Card de Contato Direto */}
-              <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-[#0B1D38] to-[#071324] p-6 text-center">
+              <div className="rounded-2xl border border-cyan-400/20 bg-linear-to-br from-[#0B1D38] to-[#071324] p-5 sm:p-6 text-center">
                 <p className="text-xs font-semibold text-cyan-300">
                   Prefere conversar por e-mail?
                 </p>
 
-                <p className="mt-1 font-mono text-sm font-bold text-white">
+                <p className="mt-1 font-mono text-xs sm:text-sm font-bold text-white truncate">
                   developerssync@gmail.com
                 </p>
               </div>

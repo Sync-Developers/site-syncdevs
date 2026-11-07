@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 
 import {
@@ -23,7 +23,7 @@ export default function Contato() {
         mensagem: '',
     });
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         setCarregando(true);
@@ -64,10 +64,10 @@ export default function Contato() {
     return (
         <div className="flex min-h-screen flex-col bg-[#061225] text-white">
 
-            <main className="relative isolate flex-1 px-6 pt-32 pb-16 lg:px-10">
+            <main className="relative isolate flex-1 px-4 sm:px-6 lg:px-10 pt-28 sm:pt-36 lg:pt-40 pb-16">
 
                 {/* Glow Effect */}
-                <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-600/15 blur-[160px]" />
+                <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-72 w-72 sm:h-[500px] sm:w-[500px] -translate-x-1/2 rounded-full bg-blue-600/15 blur-[120px] sm:blur-[160px]" />
 
                 <div className="mx-auto max-w-7xl">
 
@@ -78,54 +78,54 @@ export default function Contato() {
                             Fale Conosco
                         </span>
 
-                        <h1 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                        <h1 className="mt-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
                             Vamos transformar a sua ideia em{' '}
                             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                                 uma solução real?
                             </span>
                         </h1>
 
-                        <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-slate-300">
                             Tem um projeto em mente, precisa de um orçamento ou quer tirar dúvidas?
-                            Preencha o formulário abaixo ou entre em contacto diretamente connosco.
+                            Preencha o formulário abaixo ou entre em contato diretamente conosco.
                         </p>
 
                     </div>
 
                     {/* Cards de Conteúdo */}
-                    <div className="mt-12 mb-16 grid gap-8 lg:grid-cols-12 lg:gap-12 items-start">
+                    <div className="mt-10 sm:mt-12 mb-16 grid gap-8 lg:grid-cols-12 lg:gap-12 items-start">
 
                         {/* Lado Esquerdo: Informações */}
                         <div className="space-y-6 lg:col-span-5">
 
-                            <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-6 shadow-xl sm:p-8">
+                            <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-5 sm:p-8 shadow-xl">
 
-                                <h3 className="font-heading text-xl font-bold text-white mb-6">
+                                <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
                                     Informações de Contato
                                 </h3>
 
-                                <div className="space-y-6">
+                                <div className="space-y-5 sm:space-y-6">
 
                                     {/* E-mail */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
+                                    <div className="flex items-start gap-3 sm:gap-4">
+                                        <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
                                             <Mail className="h-5 w-5" />
                                         </div>
 
-                                        <div>
+                                        <div className="min-w-0">
                                             <p className="text-xs font-medium text-slate-400">
                                                 E-mail Comercial
                                             </p>
 
-                                            <p className="mt-1 text-sm font-semibold text-white">
+                                            <p className="mt-1 text-xs sm:text-sm font-semibold text-white truncate">
                                                 developerssync@gmail.com
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Localização */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
+                                    <div className="flex items-start gap-3 sm:gap-4">
+                                        <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
                                             <MapPin className="h-5 w-5" />
                                         </div>
 
@@ -134,15 +134,15 @@ export default function Contato() {
                                                 Atendimento
                                             </p>
 
-                                            <p className="mt-1 text-sm font-semibold text-white">
+                                            <p className="mt-1 text-xs sm:text-sm font-semibold text-white">
                                                 São Paulo e Rio de Janeiro / Brasil — 100% Remoto
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Tempo de resposta */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
+                                    <div className="flex items-start gap-3 sm:gap-4">
+                                        <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-cyan-400">
                                             <Clock className="h-5 w-5" />
                                         </div>
 
@@ -151,7 +151,7 @@ export default function Contato() {
                                                 Tempo de Resposta
                                             </p>
 
-                                            <p className="mt-1 text-sm font-semibold text-white">
+                                            <p className="mt-1 text-xs sm:text-sm font-semibold text-white">
                                                 Até 24 horas
                                             </p>
                                         </div>
@@ -160,19 +160,19 @@ export default function Contato() {
                                 </div>
 
                                 {/* Redes e Desenvolvedores */}
-                                <div className="mt-8 pt-6 border-t border-white/10">
+                                <div className="mt-6 sm:mt-8 pt-6 border-t border-white/10">
 
                                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
                                         REDES & DESENVOLVEDORES
                                     </p>
 
-                                    <div className="flex flex-wrap items-center gap-3">
+                                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
 
                                         <a
                                             href="https://github.com/Sync-Developers"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                                         >
                                             <svg className="h-4 w-4 fill-cyan-400" viewBox="0 0 24 24">
                                                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -184,7 +184,7 @@ export default function Contato() {
                                             href="https://www.linkedin.com/in/marypraxedes/"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                                         >
                                             <span className="text-cyan-400 font-bold">in</span>
                                             Maryane Praxedes
@@ -194,7 +194,7 @@ export default function Contato() {
                                             href="https://www.linkedin.com/in/joaovitordinizalves/"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
+                                            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-300"
                                         >
                                             <span className="text-cyan-400 font-bold">in</span>
                                             João Vitor Diniz
@@ -207,31 +207,32 @@ export default function Contato() {
                         </div>
 
                         {/* Lado Direito: Formulário */}
-                        <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-6 shadow-2xl sm:p-8 lg:col-span-7">
+                        <div className="rounded-2xl border border-white/10 bg-[#0A182E] p-5 sm:p-8 shadow-2xl lg:col-span-7">
 
                             {enviado ? (
 
-                                <div className="flex flex-col items-center justify-center py-12 text-center">
+                                <div className="flex flex-col items-center justify-center py-10 sm:py-12 text-center">
 
                                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
                                         <CheckCircle2 className="h-8 w-8" />
                                     </div>
 
-                                    <h3 className="font-heading text-2xl font-bold text-white">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-white">
                                         Mensagem Enviada!
                                     </h3>
 
-                                    <p className="mt-2 text-sm text-slate-300 max-w-md">
+                                    <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-md">
                                         Obrigado por entrar em contato.
                                         Analisaremos a sua mensagem e responderemos o mais breve possível.
                                     </p>
 
                                     <button
+                                        type="button"
                                         onClick={() => {
                                             setEnviado(false);
                                             setErro('');
                                         }}
-                                        className="mt-6 rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition hover:border-cyan-400 hover:bg-cyan-400/10"
+                                        className="mt-6 rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition hover:border-cyan-400 hover:bg-cyan-400/10 active:scale-95"
                                     >
                                         Enviar outra mensagem
                                     </button>
@@ -240,14 +241,14 @@ export default function Contato() {
 
                             ) : (
 
-                                <form onSubmit={handleSubmit} className="space-y-5">
+                                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
 
-                                    <h3 className="font-heading text-xl font-bold text-white">
+                                    <h3 className="text-lg sm:text-xl font-bold text-white">
                                         Envie uma mensagem
                                     </h3>
 
                                     {/* Nome e E-mail */}
-                                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 
                                         <div>
                                             <label className="mb-1.5 block text-xs font-semibold text-slate-300">
@@ -265,7 +266,7 @@ export default function Contato() {
                                                     })
                                                 }
                                                 placeholder="Ex: Peter Parker"
-                                                className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                                className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                             />
                                         </div>
 
@@ -285,7 +286,7 @@ export default function Contato() {
                                                     })
                                                 }
                                                 placeholder="peter@parker.com"
-                                                className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                                className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                             />
                                         </div>
 
@@ -305,21 +306,21 @@ export default function Contato() {
                                                     servico: e.target.value
                                                 })
                                             }
-                                            className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                            className="w-full rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                         >
-                                            <option value="Desenvolvimento Web">
+                                            <option value="Desenvolvimento Web" className="bg-[#061225] text-white">
                                                 Desenvolvimento Web (Sites / Landing Pages)
                                             </option>
 
-                                            <option value="Sistemas Personalizados">
+                                            <option value="Sistemas Personalizados" className="bg-[#061225] text-white">
                                                 Sistemas Personalizados / Web Apps
                                             </option>
 
-                                            <option value="Cloud & DevOps">
+                                            <option value="Cloud & DevOps" className="bg-[#061225] text-white">
                                                 Cloud & DevOps
                                             </option>
 
-                                            <option value="Outro">
+                                            <option value="Outro" className="bg-[#061225] text-white">
                                                 Outro assunto
                                             </option>
                                         </select>
@@ -342,7 +343,7 @@ export default function Contato() {
                                                 })
                                             }
                                             placeholder="Descreva brevemente o seu projeto, prazos ou objetivos..."
-                                            className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                                            className="w-full resize-none rounded-xl border border-white/10 bg-[#061225] px-4 py-3 text-base sm:text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
                                         />
                                     </div>
 
@@ -350,7 +351,7 @@ export default function Contato() {
                                     {erro && (
                                         <p
                                             role="alert"
-                                            className="text-sm text-center text-red-400"
+                                            className="text-sm text-center text-red-400 font-medium"
                                         >
                                             {erro}
                                         </p>

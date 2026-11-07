@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
     <footer className="w-full border-t border-white/10 bg-[#061225] py-8 text-white">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 text-xs text-slate-400 sm:flex-row lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 sm:px-6 text-xs text-slate-400 md:flex-row lg:px-10">
         
         {/* Lado Esquerdo: Logo + Nome + Slogan Menor */}
         <div className="flex items-center gap-3">
@@ -18,15 +17,15 @@ export default function Footer() {
         </div>
 
         {/* Links Rápidos com Texto Discreto */}
-        <div className="flex items-center gap-6 text-xs font-medium">
-          <Link to="/" className="transition hover:text-cyan-400">Home</Link>
-          <Link to="/sobre" className="transition hover:text-cyan-400">Sobre</Link>
-          <Link to="/projetos" className="transition hover:text-cyan-400">Projetos</Link>
-          <Link to="/contato" className="transition hover:text-cyan-400">Contato</Link>
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-medium">
+          <Link to="/" className="p-1 transition hover:text-cyan-400">Home</Link>
+          <Link to="/sobre" className="p-1 transition hover:text-cyan-400">Sobre</Link>
+          <Link to="/projetos" className="p-1 transition hover:text-cyan-400">Projetos</Link>
+          <Link to="/contato" className="p-1 transition hover:text-cyan-400">Contato</Link>
         </div>
 
         {/* Lado Direito: Direitos Autorais Menor */}
-        <p className="text-[11px] text-slate-500">
+        <p className="text-[11px] text-slate-500 text-center md:text-right">
           © {new Date().getFullYear()} Sync Developers. Todos os direitos reservados.
         </p>
         

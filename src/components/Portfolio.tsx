@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, ShieldCheck, HeartHandshake } from 'lucide-react';
 
 const projects = [
@@ -8,7 +7,6 @@ const projects = [
     description: "Controle total da sua operação comercial com gestão de oportunidades, métricas e BI.",
     url: "https://relaciona-front.vercel.app/",
     tag: "React / CRM",
-    // Substitua pelo caminho da imagem no seu projeto (ex: '/assets/relaciona.jpg' ou import)
     image: "/relaciona-banner.png" 
   },
   {
@@ -17,24 +15,23 @@ const projects = [
     description: "Proteção veicular inteligente, 100% digital e sem burocracia para você e seu veículo.",
     url: "https://segurae-front.vercel.app/",
     tag: "React / Seguros",
-    // Substitua pelo caminho da imagem no seu projeto
     image: "/segurae-banner.png" 
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="projetos" className="bg-[#F5F8FC] py-20 text-[#0A1730] sm:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="projetos" className="bg-[#F5F8FC] py-16 sm:py-24 lg:py-28 text-[#0A1730]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         
         {/* Header da Seção */}
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-10 sm:mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
               Casos de Sucesso
             </span>
 
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">
               Nossos trabalhos <br className="hidden sm:inline" />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 em destaque
@@ -48,15 +45,15 @@ export default function Portfolio() {
         </div>
 
         {/* Grid dos Projetos */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 sm:p-8"
+              className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5"
             >
               <div>
                 {/* Banner / Imagem do Projeto */}
-                <div className="relative mb-6 h-52 w-full overflow-hidden rounded-xl border border-slate-200/60 bg-slate-100 sm:h-60">
+                <div className="relative mb-5 sm:mb-6 h-48 sm:h-56 md:h-60 w-full overflow-hidden rounded-xl border border-slate-200/60 bg-slate-100">
                   <img
                     src={project.image}
                     alt={`Preview do projeto ${project.title}`}
@@ -73,17 +70,17 @@ export default function Portfolio() {
                   {project.category}
                 </span>
 
-                <h3 className="mt-2 font-heading text-2xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+                <h3 className="mt-2 text-xl sm:text-2xl font-bold text-slate-900 transition-colors group-hover:text-blue-600">
                   {project.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
                   {project.description}
                 </p>
               </div>
 
               {/* Botão de Acesso ao Site */}
-              <div className="mt-8 border-t border-slate-100 pt-5">
+              <div className="mt-6 sm:mt-8 border-t border-slate-100 pt-4 sm:pt-5">
                 <a
                   href={project.url}
                   target="_blank"
@@ -99,13 +96,13 @@ export default function Portfolio() {
         </div>
 
         {/* Banner Inferior */}
-        <div className="mt-12 grid grid-cols-1 gap-6 rounded-2xl bg-[#0B0F19] p-8 text-white shadow-xl sm:grid-cols-3 sm:p-10">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 gap-6 rounded-2xl bg-[#0B0F19] p-6 sm:p-8 md:p-10 text-white shadow-xl sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex items-start gap-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600/20 text-blue-400">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white">Código Limpo</h4>
+              <h4 className="font-bold text-white text-sm sm:text-base">Código Limpo</h4>
               <p className="mt-1 text-xs text-slate-400">Arquitetura moderna e fácil manutenção.</p>
             </div>
           </div>
@@ -115,17 +112,17 @@ export default function Portfolio() {
               <HeartHandshake className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white">Atendimento Próximo</h4>
+              <h4 className="font-bold text-white text-sm sm:text-base">Atendimento Próximo</h4>
               <p className="mt-1 text-xs text-slate-400">Acompanhamento direto durante todo o projeto.</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex items-start gap-4 sm:col-span-2 lg:col-span-1">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-600/20 text-cyan-400">
               <ExternalLink className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white">Entrega Ágil</h4>
+              <h4 className="font-bold text-white text-sm sm:text-base">Entrega Ágil</h4>
               <p className="mt-1 text-xs text-slate-400">Foco na solução rápida sem perder qualidade.</p>
             </div>
           </div>
